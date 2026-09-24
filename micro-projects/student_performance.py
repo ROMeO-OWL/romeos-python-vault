@@ -25,6 +25,11 @@ def main():
         val_note = note if (note is not None and 0<= note <=100) else None
         students[i] = [name, l_name, val_age,val_note]
 
-    for id, data in students.items(): print(f"id {id}: {data}")
-
+    print("\nNumber of passing students: ",sum(1 for x in students.values() if x[3]>=50.6))
+    print("Number of failing students: ",sum(1 for x in students.values() if x[3]<=50.5))
+    keymax , maxlist= max(students.items(), key=lambda item:item[1][3])
+    keymin , minlis = min(students.items(), key=lambda item: item[1][3])
+    print(f"Max note {maxlist[3]} id: {keymax}\nMin note {minlis[3]} id: {keymin}")
+    for id, data in students.items(): print(f"\nid {id}: full name: {data[0]} {data[1]}, note: {data[3]}")
+ 
 if __name__ == '__main__':main()
