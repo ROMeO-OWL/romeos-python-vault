@@ -16,13 +16,13 @@ def main():
     for i in range(1, n_studen + 1):
         print(f"student id: {i}")
         name = get_typed_input(str, "Enter student's name:\n--> ")
-        name = name.title() if name else None
+        name = name.title() if name else "nothing"
         l_name = get_typed_input(str, "Enter student's last name:\n--> ")
-        l_name = l_name.title() if l_name else None
+        l_name = l_name.title() if l_name else "nothing"
         age = get_typed_input(int, "Enter student's age:\n--> ")
-        val_age = age if (age is not None and 5 <= age<= 25) else None
+        val_age = age if (age is not None and 5 <= age<= 25) else 0
         note = get_typed_input(float, "Enter student's note:\n--> ")
-        val_note = note if (note is not None and 0<= note <=100) else None
+        val_note = note if (note is not None and 0<= note <=100) else 0
         students[i] = [name, l_name, val_age,val_note]
 
     print("\nNumber of passing students: ",sum(1 for x in students.values() if x[3]>=50.6))
