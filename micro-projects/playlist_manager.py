@@ -13,7 +13,7 @@ def get_typed_input(data_type, prompt='', error_msg="invalid input"):
 def main():
     s_id = 1_000 ; songs = {} ; opt = 0
     while opt != 8:
-        opt = get_typed_input(int, "n1) Add a song\n2)show all song titles\n3)search song (by title or artist)\n4)filter songs by artist\n5)play a song by Id\n6)delete a song by ID\n7)view library stats\n8)exit\n--> ")
+        opt = get_typed_input(int, "n1)add a song\n2)show all song titles\n3)search song (by title or artist)\n4)filter songs by artist\n5)play a song by Id\n6)delete a song by ID\n7)view library stats\n8)exit\n--> ")
         if opt is None: print("invalid data or no more attempts") ; return
         match opt:
             case 1:
